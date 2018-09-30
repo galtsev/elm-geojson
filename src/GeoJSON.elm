@@ -57,5 +57,6 @@ featureDecoder propsDecoder = D.map2 Feature
 
 featureCollectionDecoder : Decoder props -> Decoder (FeatureCollection props)
 featureCollectionDecoder propsDecoder = D.map2 FeatureCollection
-    (D.succeed (CRS "yes"))
+    (D.succeed (CRS "ok"))
     (field "features" (D.list <| featureDecoder propsDecoder))
+
